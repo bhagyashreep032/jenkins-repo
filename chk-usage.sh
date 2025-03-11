@@ -6,5 +6,5 @@ echo "***********Ram usage***********************"
 ram_usage=$( free -h | sed -n '2p' | awk '{print$4}' ) 
 echo "Ram usage is: $ram_usage"
 echo "********************largest file in system***********"
-large-file=$( find . -type f | du -h | sort -h | head -4 )
-echo "largest file is: $large-file"
+large_file=$( find . -type f | xargs du -h | sort -rh | head -4 )
+echo "Largest files are: $large_file"
